@@ -48,6 +48,7 @@ group :development, :test do
   gem 'vcr'
   gem 'webmock'
   gem 'sqlite3'
+  gem 'fast_jsonapi'
 end
 
 group :development do
