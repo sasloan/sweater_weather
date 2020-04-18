@@ -45,8 +45,6 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'shoulda-matchers'
   gem 'simplecov'
-  gem 'vcr'
-  gem 'webmock'
   gem 'sqlite3'
   gem 'fast_jsonapi'
 end
