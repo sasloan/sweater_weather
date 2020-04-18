@@ -9,15 +9,7 @@ if Rails.env.production?
   abort('The Rails environment is running in production mode!')
 end
 require 'rspec/rails'
-require 'vcr'
-require 'webmock/rspec'
-VCR.configure do |config|
-  config.ignore_localhost = true
-  config.cassette_library_dir = 'spec/cassettes'
-  config.hook_into :webmock
-  config.default_cassette_options = { record: :new_episodes, erb: true }
-  config.configure_rspec_metadata!
-end
+
 # Add additional requires below this line. Rails is not loaded until this point!
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
