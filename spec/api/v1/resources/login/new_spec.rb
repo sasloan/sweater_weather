@@ -14,9 +14,9 @@ RSpec.describe 'A Valid user can log into the api', type: 'request' do
     response_body = {
       "data": {
         "type": "users",
-        "id": 1,
+        "id": @user.id,
         "attributes": {
-          "email": "whatever@example.com",
+          "email": @user.email,
           "api_key": clean_response[:data][:attributes][:api_key]
         }
       }
