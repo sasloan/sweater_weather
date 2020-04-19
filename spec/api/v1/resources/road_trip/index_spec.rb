@@ -9,7 +9,7 @@ RSpec.describe 'A valid user can access roadtrip data', type: 'request' do
     expect(response).to be_successful
   end
 
-  it 'If the user has a valid api key, they can access the data!' do 
+  it 'If the user has a valid api key, they can access the data!', :vcr do 
     
   origin = "Denver,CO"
   destination = "Pueblo,CO"
@@ -23,7 +23,7 @@ RSpec.describe 'A valid user can access roadtrip data', type: 'request' do
     "origin": "Denver,CO",
     "destination": "Pueblo,CO",
     "travel_time": "1 hour 48 mins",
-    "arrival_forecast": "288.18, few clouds"
+    "arrival_forecast": "288.42, few clouds"
   }
 
   expect(response).to be_successful

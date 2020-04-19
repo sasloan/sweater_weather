@@ -74,4 +74,14 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
+  VCR.configure do |config|
+    config.allow_http_connections_when_no_cassette = true
+    config.cassette_library_dir = "spec/fixtures/vcr_cassettes"
+    config.hook_into :webmock
+    config.filter_sensitive_data('<GOOGLE_GEO_CODE>') { ENV['GOOGLE_GEO_CODE'] }
+    config.filter_sensitive_data('<OPEN_WEATHER_API_KEY>') { ENV['OPEN_WEATHER_API_KEY'] }
+    config.filter_sensitive_data('<GIPHY_API_KEY>') { ENV['GIPHY_API_KEY'] }
+    config.filter_sensitive_data('<PEXELS_API_KEY>') { ENV['PEXELS_API_KEY'] }
+    config.configure_rspec_metadata!
+  end
 end
