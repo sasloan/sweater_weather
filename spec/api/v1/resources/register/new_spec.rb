@@ -24,5 +24,6 @@ RSpec.describe 'User creationg endpoint', type: 'request' do
 
     expect(response).to be_successful
     expect(clean_response).to eq(response_body)
+    expect(response.status).to eq(200)
   end
 end
