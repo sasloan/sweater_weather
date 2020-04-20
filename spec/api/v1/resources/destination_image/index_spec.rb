@@ -11,6 +11,7 @@ RSpec.describe 'Destination images', type: 'request' do
     get "/api/v1/backgrounds?location=#{location}&api_key=#{@user.api_key}"
 
     expect(response).to be_successful
+
   end
 
   it 'I cannot access this end point if my api key is invalid' do
