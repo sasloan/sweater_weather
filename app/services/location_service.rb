@@ -10,7 +10,6 @@ class LocationService
     get_json(reverse_geocode)
   end
 
-
   private
 
   def get_json(response)
