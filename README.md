@@ -15,10 +15,25 @@
  `bundle install`
  `rake db:create`
  `rake db:migrate`
- `rake db:seed` 
  
  now you are set up and ready to checkout out our API 
  
+### Sign Up
+
+  This endpoint will allow you to sign up for a api_key. Sorry no fancy views here this is the only way to get the api key
+  that you deserve. Sorry for that! 
+  
+  *params*
+    
+    :email(required) = example@example.com
+    :password(required) = example1
+    :password_confirmation(required) = example1 
+      has to be the same as password
+      
+  Example of what the request should look like. (*make sure to mark this as a POST request*)
+  
+  `https://sweater-weather-ss.herokuapp.com/api/v1/users?email=example@example.com&password=example1&password_confirmation=example1`
+      
 ### Endpoints 
 
 
