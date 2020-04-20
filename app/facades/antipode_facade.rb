@@ -15,7 +15,7 @@ class AntipodeFacade
     antipode_lat = location_service.reverse_geocode(ending_lat, ending_lng)[:results].first[:geometry][:location][:lat]
     antipode_lng = location_service.reverse_geocode(ending_lat, ending_lng)[:results].first[:geometry][:location][:lng]
     forecast_service = ForecastService.new
-    ending_forecast = forecast_service.locations_forecast(ending_lat, ending_lng)
+    ending_forecast = forecast_service.locations_forecast(antipode_lat, antipode_lng)
     antipode_forecast = AntipodeForecast.new(ending_forecast, location_service.reverse_geocode(ending_lat, ending_lng), location_service.coordinates(@starting_city))
   end
 end
