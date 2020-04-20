@@ -12,15 +12,13 @@ RSpec.describe 'A Valid user can log into the api', type: 'request' do
     clean_response = JSON.parse(response.body, symbolize_names: true)
 
     response_body = {
-      "data": {
-        "type": "users",
-        "id": @user.id,
-        "attributes": {
-          "email": @user.email,
-          "api_key": clean_response[:data][:attributes][:api_key]
-        }
-      }
-    }
+      :data => 
+        {:attributes=>
+          {:api_key=>clean_response[:data][:attributes][:api_key], 
+          :email=>@user.email}, 
+        :id=>"1", 
+        :type=>"session"
+        }}
 
     expect(response).to be_successful
     expect(clean_response).to eq(response_body)

@@ -5,18 +5,9 @@ class Api::V1::SessionsController < ApplicationController
 
     if @user
       session[:id] = @user.id
-      render json: {
-        data: {
-          type: 'users',
-          id: @user.id,
-          attributes: {
-            email: @user.email,
-            api_key: @user.api_key
-          }
-        }
-      }
+      render json: SessionSerializer.new(@user)
     else
-      render json: {status: 401}
+      render status: :bad_request
     end
   end
 end
