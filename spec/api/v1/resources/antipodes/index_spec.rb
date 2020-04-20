@@ -14,17 +14,15 @@ RSpec.describe 'Anitpodes', type: 'request' do
     clean_response = JSON.parse(response.body, symbolize_names: true)
 
     expected_response_body = {
-      data: {
-          id: "null",
-          type: "antipode",
-          attributes: {
-              location_name: "Antipode City Name",
-              forecast: {
-                  summary: "Mostly Cloudy",
-                  current_temperature: "72",
-              },
-              search_location: "Hong Kong"
-    }}}
+      :data => 
+        {:attributes=>
+          {:current_temperature=>55.26, 
+          :location_name=>"Argentina", 
+          :search_location=>"Hong Kong", 
+          :summary=>"clear sky"}, 
+          :id=>nil, 
+          :type=>"antipode"
+        }}
 
     expect(response).to be_successful
     expect(clean_response).to eq(expected_response_body)
