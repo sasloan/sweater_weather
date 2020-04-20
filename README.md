@@ -89,7 +89,7 @@
    
    Your Response should look something like this:
    
-   ` response_body = {:data=>
+    response_body = {:data=>
     {:id=>nil,
      :type=>"destination_image",
      :attributes=>
@@ -104,7 +104,7 @@
         "https://images.pexels.com/photos/3183165/pexels-photo-3183165.jpeg",
        :image_5=>
         "https://images.pexels.com/photos/2566581/pexels-photo-2566581.jpeg"}}}
-    `
+    
     
  #### Destination Forecast 
  
@@ -166,18 +166,18 @@
    
    Your response should look something like this: 
    
-   `response_body = {:data => 
-        {:attributes=>  
-          {:arrival_forecast=>42.64, 
-          :id=>nil, 
-          :lat=>38.2544472, 
-          :lng=>-104.6091409, 
-          :travel_time=>"1 hour 48 mins", 
-          :weather_description=>"overcast clouds"}, 
-          :id=>nil, 
-          :type=>"road_trip"}
-      }
-    `
+     response_body = {:data => 
+          {:attributes=>  
+            {:arrival_forecast=>42.64, 
+            :id=>nil, 
+            :lat=>38.2544472, 
+            :lng=>-104.6091409, 
+            :travel_time=>"1 hour 48 mins", 
+            :weather_description=>"overcast clouds"}, 
+            :id=>nil, 
+            :type=>"road_trip"}
+        }
+    
     
   
  
