@@ -21,12 +21,12 @@ RSpec.describe 'A valid user can access roadtrip data', type: 'request' do
 
     expected_response_body = {:data => 
       {:attributes=>  
-        {:arrival_forecast=>61.9, 
+        {:arrival_forecast=>69.21, 
         :id=>nil, 
         :lat=>38.2544472, 
         :lng=>-104.6091409, 
         :travel_time=>"1 hour 48 mins", 
-        :weather_description=>"clear sky"}, 
+        :weather_description=>"overcast clouds"}, 
         :id=>nil, 
         :type=>"road_trip"}
     }
@@ -53,7 +53,7 @@ RSpec.describe 'A valid user can access roadtrip data', type: 'request' do
     api_key = @user.api_key
 
     post "/api/v1/road_trip?origin=#{origin}&api_key='hello motto'"
-
-    expect(response).not_to be_successful
+      require 'pry'; binding.pry
+    expect(response.body).to eq("Bad credentials")
   end
 end
