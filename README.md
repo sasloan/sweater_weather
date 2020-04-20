@@ -33,9 +33,46 @@
   Example of what the request should look like. (*make sure to mark this as a POST request*)
   
   `https://sweater-weather-ss.herokuapp.com/api/v1/users?email=example@example.com&password=example1&password_confirmation=example1`
+  
+  Your response should look something like this 
+  
+  `response_body = {
+        :data => 
+          {:attributes=>
+            {:api_key=> AJGOIJ3Q409TUW5Y0QTE409, 
+            :email=> example@example.com}, 
+          :id=>"1", 
+          :type=>"users"
+      }}
+      `
       
-### Endpoints 
+### Sign In
 
+  This endpoint will allow you to sign into the app. again sorry for the lack of a form!!! I know that things can get a 
+  little crazy some times so if you ever miss place your api key you can get it again by signing in! 
+  
+  *params* 
+    
+    :email(required) = example@example.com
+    :password(required) = example1
+      
+ Example of what your request should look like (*make sure to mark this as a POST request*)
+ 
+    `https://sweater-weather-ss.herokuapp.com/api/v1/sessions?email=#example@example.com&password=example1`
+    
+ Your response should look something like this
+ 
+    ` response_body = {
+      :data => 
+        {:attributes=>
+          {:api_key=>clean_response[:data][:attributes][:api_key], 
+          :email=>@user.email}, 
+        :id=>"1", 
+        :type=>"session"
+        }}
+        `
+        
+### Endpoints 
 
 #### Backgrounds
 
