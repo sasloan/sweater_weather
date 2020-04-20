@@ -53,7 +53,7 @@ RSpec.describe 'A valid user can access roadtrip data', type: 'request' do
     api_key = @user.api_key
 
     post "/api/v1/road_trip?origin=#{origin}&api_key='hello motto'"
-      require 'pry'; binding.pry
+    
     expect(response.body).to eq("Bad credentials")
   end
 end
