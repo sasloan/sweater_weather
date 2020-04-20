@@ -1,5 +1,6 @@
 class Api::V1::RoadTripController < ApplicationController
-
+  before_action :authenticate
+  
   def create
     origin = params["origin"]
     destination = params["destination"]
