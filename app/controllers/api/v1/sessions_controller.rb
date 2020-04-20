@@ -7,7 +7,7 @@ class Api::V1::SessionsController < ApplicationController
       session[:id] = @user.id
       render json: SessionSerializer.new(@user)
     else
-      render status: :bad_request
+      render json: {status: 401}
     end
   end
 end

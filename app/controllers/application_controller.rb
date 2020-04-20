@@ -14,9 +14,7 @@ class ApplicationController < ActionController::Base
   end
   
   def authenticate_token
-    authenticate_with_http_token do |token, options|
-      @current_user = User.find_by(api_key: token)
-    end
+    authenticate_with_http_token
   end
 
   def render_unauthorized(realm = "Application")

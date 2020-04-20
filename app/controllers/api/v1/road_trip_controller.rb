@@ -8,7 +8,7 @@ class Api::V1::RoadTripController < ApplicationController
     if trip_info
       render json: RoadTripSerializer.new(trip_info)
     else
-      render status: :bad_request
+      render json: {status: 401}
     end
   end
 end
