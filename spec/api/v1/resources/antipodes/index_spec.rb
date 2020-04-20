@@ -1,11 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Anitpodes', type: 'request' do 
-  before :each do 
-    @user = create(:user)
-  end
-
-  it 'An antipode coordinates and weather data can be found through this endpoint' do 
+  it 'An antipode coordinates and weather data can be found through this endpoint', :vcr do 
 
     starting_city = 'Hong Kong'
 
