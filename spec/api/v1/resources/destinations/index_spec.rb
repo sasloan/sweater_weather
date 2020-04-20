@@ -17,4 +17,13 @@ RSpec.describe 'Destination weather', type: 'request' do
 
 
   end
+
+  it 'I cannot access this end point if my api key is invalid' do
+
+    location = "denver,co"
+
+    get "/api/v1/forecast?api_key='hello motto'&location=#{location}"
+
+    expect(response).not_to be_successful
+  end
 end
