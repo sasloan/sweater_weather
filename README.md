@@ -28,13 +28,13 @@
     :email(required) = example@example.com
     :password(required) = example1
     :password_confirmation(required) = example1 
-      has to be the same as password
+      (has to be the same as password)
       
   Example of what the request should look like. (*make sure to mark this as a POST request*)
   
   `https://sweater-weather-ss.herokuapp.com/api/v1/users?email=example@example.com&password=example1&password_confirmation=example1`
   
-  Your response should look something like this 
+  Your response should look something like this: 
   
   `response_body = {
         :data => 
@@ -60,7 +60,7 @@
  
     `https://sweater-weather-ss.herokuapp.com/api/v1/sessions?email=#example@example.com&password=example1`
     
- Your response should look something like this
+ Your response should look something like this:
  
     ` response_body = {
       :data => 
@@ -87,6 +87,68 @@
    
    `https://sweater-weather-ss.herokuapp.com/api/v1/backgrounds?location=Denver,co&api_key=<YOUR_API_KEY>`
    
+   Your Response should look something like this:
    
+   ` response_body = {:data=>
+  {:id=>nil,
+   :type=>"destination_image",
+   :attributes=>
+    {:id=>nil,
+     :image_1=>
+      "https://images.pexels.com/photos/3184423/pexels-photo-3184423.jpeg",
+     :image_2=>
+      "https://images.pexels.com/photos/3626622/pexels-photo-3626622.jpeg",
+     :image_3=>
+      "https://images.pexels.com/photos/3153198/pexels-photo-3153198.jpeg",
+     :image_4=>
+      "https://images.pexels.com/photos/3183165/pexels-photo-3183165.jpeg",
+     :image_5=>
+      "https://images.pexels.com/photos/2566581/pexels-photo-2566581.jpeg"}}}
+    `
     
+ #### Destination Forecast 
+ 
+    This Endpoint is designed to provide you with the data of any destinations forecast infromation that is put into the argument
+    
+    *params*
+    
+      :location(required) = Denver, Co
+      :api_key(required) = <YOUR_API_KEY>
+      
+    
+    Example of how your request should look 
+    
+    `https://sweater-weather-ss.herokuapp.com/api/v1/forecast?location=Denver,Co&api_key=<YOUR_API_KEY>`
+    
+    Your Response should look something like this:
+    
+    `{"data"=>
+    {"id"=>nil,
+     "type"=>"destination_forecast",
+     "attributes"=>
+      {"id"=>nil,
+       "lat"=>39.7392358,
+       "lng"=>-104.990251,
+       "current_temp"=>60.78,
+       "feels_like"=>289.14,
+       "humidity"=>26,
+       "visibility"=>16093,
+       "uv_index"=>7.93,
+       "hourly_temp"=>60.78,
+       "current_sunrise"=>1587384847,
+       "current_sunset"=>1587433377,
+       "friday"=>
+        {"dt"=>1587405600,
+         "sunrise"=>1587384847,
+         "sunset"=>1587433377,
+         "temp"=>
+          {"day"=>289.14,
+           "min"=>286.11,
+           "max"=>291.78,
+           "night"=>286.11,
+                    . . . 
+                    `
+   
+   
+  
  
