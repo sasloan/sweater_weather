@@ -149,6 +149,35 @@
                     . . . 
                     `
    
+  ### Road Trip Planner
    
+   This Endpoint provides you with essential data during a road trip. You can put in a starting point and an ending point and 
+   it will return all the weather data you need to plan a perfect trip! 
+   
+   *params* 
+    
+    :origin(required) = Denver, Co
+    :destination(required) = Pueblo, Co
+    :api_key(required) = <YOUR_API_KEY>
+    
+   Your request should look something like this: 
+   
+   `https://sweater-weather-ss.herokuapp.com/api/v1/road_trip?origin=Denver,Co&destination=Pueblo,Co&api_key=<YOUR_API_KEY>`
+   
+   Your response should look something like this: 
+   
+   `response_body = {:data => 
+      {:attributes=>  
+        {:arrival_forecast=>42.64, 
+        :id=>nil, 
+        :lat=>38.2544472, 
+        :lng=>-104.6091409, 
+        :travel_time=>"1 hour 48 mins", 
+        :weather_description=>"overcast clouds"}, 
+        :id=>nil, 
+        :type=>"road_trip"}
+    }
+    `
+    
   
  
