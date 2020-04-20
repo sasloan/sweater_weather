@@ -108,7 +108,7 @@
     
  #### Destination Forecast 
  
-    This Endpoint is designed to provide you with the data of any destinations forecast infromation that is put into the argument
+   This Endpoint is designed to provide you with the data of any destinations forecast infromation that is put into the argument
     
     *params*
     
@@ -116,11 +116,11 @@
       :api_key(required) = <YOUR_API_KEY>
       
     
-    Example of how your request should look 
+   Example of how your request should look 
     
     `https://sweater-weather-ss.herokuapp.com/api/v1/forecast?location=Denver,Co&api_key=<YOUR_API_KEY>`
     
-    Your Response should look something like this:
+   Your Response should look something like this:
     
     `{"data"=>
     {"id"=>nil,
