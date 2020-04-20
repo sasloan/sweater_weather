@@ -19,13 +19,18 @@ RSpec.describe 'A valid user can access roadtrip data', type: 'request' do
 
   clean_response = JSON.parse(response.body, symbolize_names: true)
 
-  expected_response_body = {
-    "origin": "Denver,CO",
-    "destination": "Pueblo,CO",
-    "travel_time": "1 hour 48 mins",
-    "arrival_forecast": "288.42, few clouds"
+  expected_response_body = {:data => 
+    {:attributes=>  
+      {:arrival_forecast=>288.42, 
+      :id=>nil, 
+      :lat=>38.2544472, 
+      :lng=>-104.6091409, 
+      :travel_time=>"1 hour 48 mins", 
+      :weather_description=>"few clouds"}, 
+      :id=>nil, 
+      :type=>"road_trip"}
   }
-
+  
   expect(response).to be_successful
   expect(clean_response).to eq(expected_response_body)
   end
