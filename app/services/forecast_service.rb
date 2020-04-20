@@ -5,8 +5,6 @@ class ForecastService
     get_json(locations_forecast)
   end
 
-
-
   private 
 
   def get_json(response)
