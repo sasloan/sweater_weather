@@ -5,6 +5,11 @@ class LocationService
     get_json(coordinates)
   end
 
+  def reverse_geocode(latlng)
+    reverse_geocode = conn.get("/maps/api/geocode/json?latlng=#{latlng}") 
+    get_json(reverse_geocode)
+  end
+
 
   private
 
