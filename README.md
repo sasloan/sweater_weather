@@ -19,6 +19,22 @@
  
  now you are set up and ready to checkout out our API 
  
-#### Endpoints 
+### Endpoints 
 
 
+#### Backgrounds
+
+  This endpoint gives you backgrounds for whatever location you type in. Your API key will be manditory for this query. please make sure you have a valid api key ready to use. 
+  
+  *params*
+  
+    :api_key(required) = <YOUR API KEY>
+    :location(required) = example: Denver, co 
+    
+   Example of what the request should look like: 
+   
+   `https://sweater-weather-ss.herokuapp.com/api/v1/backgrounds?location=Denver,co&api_key=<YOUR_API_KEY>`
+   
+   
+    
+ 
