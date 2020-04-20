@@ -1,5 +1,6 @@
 class Api::V1::ForecastController < ApplicationController
-
+  before_action :authenticate
+  
   def index 
     address = params[:location]
     coordinates = DestinationForecastSearch.new(address)

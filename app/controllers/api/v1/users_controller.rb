@@ -4,9 +4,7 @@ class Api::V1::UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      render :create
-    else
-      render status: :bad_request
+      render json: UsersSerializer.new(@user)
     end
   end
 

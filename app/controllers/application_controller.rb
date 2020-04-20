@@ -4,17 +4,21 @@ class ApplicationController < ActionController::Base
   protected
 
   def authenticate
-    authenticate_token || render_unauthorized
-  end
-
-  def authenticate_token
-    authenticate_with_http_token do |token, options|
-      @current_user = User.find_by(api_key: token)
+    user = User.find_by(api_key: params[:api_key])
+    
+    if user
+      authenticate_token
+    else
+      render_unauthorized 
     end
+  end
+  
+  def authenticate_token
+    authenticate_with_http_token
   end
 
   def render_unauthorized(realm = "Application")
-    self.params["api_key"] = %(Token realm="#{realm}")
+    self.headers["WWW-Authenticate"] = %(Token realm="#{realm}")
     render json: 'Bad credentials', status: :unauthorized
   end
 end

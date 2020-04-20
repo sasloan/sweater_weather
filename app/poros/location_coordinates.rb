@@ -22,12 +22,12 @@ class LocationCoordinates
   def initialize(coordinate_data, forecast_data)
     @lat = coordinate_data[:results].first[:geometry][:location][:lat]
     @lng = coordinate_data[:results].first[:geometry][:location][:lng]
-    @current_temp = forecast_data[:current][:temp]
+    @current_temp = ((forecast_data[:current][:temp] - 273.15) * 9/5 + 32).round(2)
     @feels_like = forecast_data[:current][:temp]
     @humidity = forecast_data[:current][:humidity]
     @visibility = forecast_data[:current][:visibility]
     @uv_index = forecast_data[:current][:uvi]
-    @hourly_temp = forecast_data[:hourly].first[:temp]
+    @hourly_temp = ((forecast_data[:hourly].first[:temp] - 273.15) * 9/5 + 32).round(2)
     @current_sunrise = forecast_data[:current][:sunrise]
     @current_sunset = forecast_data[:current][:sunset]
     @friday = forecast_data[:daily][0]

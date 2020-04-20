@@ -12,15 +12,13 @@ RSpec.describe 'User creationg endpoint', type: 'request' do
     clean_response = JSON.parse(response.body, symbolize_names: true)
 
       response_body = {
-      "data": {
-        "type": "users",
-        "id": 1,
-        "attributes": {
-          "email": "whatever@example.com",
-          "api_key": clean_response[:data][:attributes][:api_key]
-        }
-      }
-    }
+        :data => 
+          {:attributes=>
+            {:api_key=> clean_response[:data][:attributes][:api_key], 
+            :email=> email}, 
+          :id=>"1", 
+          :type=>"users"
+      }}
 
     expect(response).to be_successful
     expect(clean_response).to eq(response_body)
