@@ -21,12 +21,12 @@ RSpec.describe 'A valid user can access roadtrip data', type: 'request' do
 
     expected_response_body = {:data => 
       {:attributes=>  
-        {:arrival_forecast=>288.42, 
+        {:arrival_forecast=>42.64, 
         :id=>nil, 
         :lat=>38.2544472, 
         :lng=>-104.6091409, 
         :travel_time=>"1 hour 48 mins", 
-        :weather_description=>"few clouds"}, 
+        :weather_description=>"overcast clouds"}, 
         :id=>nil, 
         :type=>"road_trip"}
     }
