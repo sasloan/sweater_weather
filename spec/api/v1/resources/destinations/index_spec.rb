@@ -14,7 +14,6 @@ RSpec.describe 'Destination weather', type: 'request' do
     expect(response).to be_successful
 
     destinations = JSON.parse(response.body)
-    require 'pry'; binding.pry
 
   end
 
