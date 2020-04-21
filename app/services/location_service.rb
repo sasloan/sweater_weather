@@ -19,6 +19,7 @@ class LocationService
   def conn
     Faraday.new(url: "https://maps.googleapis.com") do |faraday|
       faraday.params["key"] = ENV["GOOGLE_GEO_CODE"]
+      faraday.params['units'] = 'imperial'
     end
   end
 end
