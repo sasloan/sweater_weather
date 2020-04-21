@@ -12,7 +12,7 @@ RSpec.describe 'Anitpodes', type: 'request' do
     expected_response_body = {
       :data => 
         {:attributes=>
-          {:current_temperature=>55.49, 
+          {:current_temperature=>53.56, 
           :location_name=>"Argentina", 
           :search_location=>"Hong Kong", 
           :summary=>"clear sky"}, 
