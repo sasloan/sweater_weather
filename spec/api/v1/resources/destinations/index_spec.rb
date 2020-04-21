@@ -15,7 +15,6 @@ RSpec.describe 'Destination weather', type: 'request' do
 
     destinations = JSON.parse(response.body)
 
-
   end
 
   it 'I cannot access this end point if my api key is invalid' do
