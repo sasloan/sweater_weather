@@ -13,5 +13,4 @@ class LocationBackgroundImages
     @image_4 = image_data[:photos][3][:src][:original]
     @image_5 = image_data[:photos][4][:src][:original]
   end
-
 end
