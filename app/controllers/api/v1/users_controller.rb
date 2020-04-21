@@ -5,6 +5,8 @@ class Api::V1::UsersController < ApplicationController
 
     if @user.save
       render json: UsersSerializer.new(@user)
+    else
+      render json: {status: 401}
     end
   end
 

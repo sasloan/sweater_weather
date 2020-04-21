@@ -8,14 +8,23 @@ class RoadTripFacade
   end
 
   def travel_info
-    road_trip_service = RoadTripService.new
     travel_info = road_trip_service.travel_data(@origin, @destination)
-    location_service = LocationService.new  
     coordinates = location_service.coordinates(@destination)
     lat = coordinates[:results].first[:geometry][:location][:lat]
     lng = coordinates[:results].first[:geometry][:location][:lng]
-    forecast_service = ForecastService.new
     locations_forecast = forecast_service.locations_forecast(lat, lng)
     planned_trip = PlannedTrip.new(travel_info, coordinates, locations_forecast)
+  end
+
+  def road_trip_service
+    RoadTripService.new
+  end
+
+  def location_service
+    LocationService.new 
+  end
+
+  def forecast_service
+    ForecastService.new
   end
 end

@@ -6,8 +6,11 @@ class DestinationBackground
   end
 
   def location_background_images
-    service = BackgroundService.new
     image_data = service.location_background(@location)
     images = LocationBackgroundImages.new(image_data)
+  end
+
+  def service
+    BackgroundService.new
   end
 end
