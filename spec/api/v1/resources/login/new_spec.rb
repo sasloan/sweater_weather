@@ -23,4 +23,15 @@ RSpec.describe 'A Valid user can log into the api', type: 'request' do
     expect(response).to be_successful
     expect(clean_response).to eq(response_body)
   end
+
+  it 'A invalid user can not send a post request to log into the api' do 
+
+    post "/api/v1/sessions?email=bad@creds.com&password=#{@user.password}"
+
+    clean_response = JSON.parse(response.body, symbolize_names: true)
+
+    response_body = {:status=>401}
+
+    expect(clean_response).to eq(response_body)
+  end
 end

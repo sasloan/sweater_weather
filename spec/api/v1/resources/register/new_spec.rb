@@ -24,4 +24,19 @@ RSpec.describe 'User creationg endpoint', type: 'request' do
     expect(clean_response).to eq(response_body)
     expect(response.status).to eq(200)
   end
+
+  it 'a new user can not be made by passing in the incorrect data' do
+    
+    email = "whatever@example.com"
+    password = "password"
+    password_confirmation = "password"
+    
+    post "/api/v1/users?email=#{email}&password=#{password}&password_confirmation=yolo"
+
+    clean_response = JSON.parse(response.body, symbolize_names: true)
+
+    response_body = {:status=>401}
+
+    expect(clean_response).to eq(response_body)
+  end
 end
