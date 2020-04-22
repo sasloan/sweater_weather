@@ -6,9 +6,9 @@ class PlannedTrip
               :lat,
               :lng
 
-  def initialize(travel_info, coordinates, locations_forecast)
-    @lat = coordinates[:results].first[:geometry][:location][:lat]
-    @lng = coordinates[:results].first[:geometry][:location][:lng]
+  def initialize(travel_info, lat, lng, locations_forecast)
+    @lat = lat
+    @lng = lng
     @travel_time = travel_info[:routes].first[:legs].first[:duration][:text]
     @arrival_forecast = kelvin_to_fahrenheit(locations_forecast[:current][:temp])
     @weather_description = locations_forecast[:current][:weather].first[:description]

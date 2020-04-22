@@ -13,7 +13,7 @@ class RoadTripFacade
     lat = coordinates[:results].first[:geometry][:location][:lat]
     lng = coordinates[:results].first[:geometry][:location][:lng]
     locations_forecast = forecast_service.locations_forecast(lat, lng)
-    planned_trip = PlannedTrip.new(travel_info, coordinates, locations_forecast)
+    planned_trip = PlannedTrip.new(travel_info, lat, lng, locations_forecast)
   end
 
   def road_trip_service
